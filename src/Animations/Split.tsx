@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import MotionDiv from "@/utils/motionDivWrapper";
 export default function Split({ animateActive }: { animateActive: boolean }) {
   return (
     <div className="relative w-72 h-72 mx-auto mb-20 flex items-center justify-center scale-[0.7] md:scale-[0.85] lg:scale-100">
-      <motion.div
+      <MotionDiv
         animate={
           animateActive
             ? { scale: 1.4, opacity: 0.15 }
@@ -13,7 +13,7 @@ export default function Split({ animateActive }: { animateActive: boolean }) {
         className="absolute w-48 h-48 rounded-full will-change-transform bg-[#B6FF00] blur-2xl lg:blur-2xl pointer-events-none"
       />
 
-      <motion.div
+      <MotionDiv
         animate={
           animateActive
             ? {
@@ -36,9 +36,9 @@ export default function Split({ animateActive }: { animateActive: boolean }) {
           loading="lazy"
           className="object-contain"
         />
-      </motion.div>
+      </MotionDiv>
 
-      <motion.div
+      <MotionDiv
         animate={
           animateActive
             ? {
@@ -57,15 +57,15 @@ export default function Split({ animateActive }: { animateActive: boolean }) {
         className="absolute left-12 top-9 w-20 h-20 z-20 will-change-transform pointer-events-none mb-20"
       >
         <Image
-          src="/leftarrow.png"
+          src="/leftarrow.avif"
           alt=""
           fill
           loading="lazy"
           className="object-contain"
         />
-      </motion.div>
+      </MotionDiv>
 
-      <motion.div
+      <MotionDiv
         animate={
           animateActive
             ? {
@@ -84,13 +84,13 @@ export default function Split({ animateActive }: { animateActive: boolean }) {
         className="absolute right-12 top-9 w-20 h-20 z-20 will-change-transform pointer-events-none mb-40"
       >
         <Image
-          src="/rightarrow.png"
+          src="/rightarrow.avif"
           alt=""
           fill
           loading="lazy"
           className="object-contain"
         />
-      </motion.div>
+      </MotionDiv>
     </div>
   );
 }

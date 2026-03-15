@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import MotionDiv from "@/utils/motionDivWrapper";
+import MotionPath from "@/utils/motionPathWrapper";
 export default function Wifi({ animateActive }: { animateActive: boolean }) {
   const arcs = [
     {
@@ -16,7 +17,7 @@ export default function Wifi({ animateActive }: { animateActive: boolean }) {
   return ( 
     <div className="relative w-full h-[180px] flex items-center justify-center md:scale-[0.85] lg:scale-100">
       {/* LOCK */}
-      <motion.div
+      <MotionDiv
         animate={
           animateActive
             ? {
@@ -48,7 +49,7 @@ export default function Wifi({ animateActive }: { animateActive: boolean }) {
                 />
 
                 {/* Animated Glow */}
-                <motion.path
+                <MotionPath
                   d={arc.d}
                   fill="none"
                   stroke="white"
@@ -88,7 +89,7 @@ export default function Wifi({ animateActive }: { animateActive: boolean }) {
             className="object-contain"
           />
         </div>
-      </motion.div>
+      </MotionDiv>
     </div>
   );
 }

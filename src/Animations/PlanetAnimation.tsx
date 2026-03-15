@@ -1,17 +1,16 @@
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-
+import MotionDiv from "@/utils/motionDivWrapper";
 export default function PlanetAnimation({ animateActive }: { animateActive: boolean }) {
   return (
-    <motion.div
+    <MotionDiv
       animate={animateActive ? "hover" : "rest"}
       className="relative w-[350px] h-full scale-[0.7] md:scale-[0.85] lg:scale-100"
     >
       <div className="absolute bottom-0 -left-10 w-40 h-40">
-        <Image src="/planet.png" alt="" fill className="object-contain" />
+        <Image src="/planet.avif" alt="" fill className="object-contain" />
 
-        <motion.div
+        <MotionDiv
           variants={{
             rest: { rotate: 0 },
             hover: {
@@ -31,7 +30,7 @@ export default function PlanetAnimation({ animateActive }: { animateActive: bool
             fill
             className="object-contain opacity-80"
           />
-        </motion.div>
+        </MotionDiv>
       </div>
 
       <div className="absolute bottom-3.5 left-[80px]">
@@ -51,7 +50,7 @@ export default function PlanetAnimation({ animateActive }: { animateActive: bool
           >
             <div className="absolute w-full h-[2px] border-t border-dashed border-white/40" />
 
-            <motion.div
+            <MotionDiv
               variants={{
                 rest: { translateX: 0, opacity: 0 },
 hover: {
@@ -74,6 +73,6 @@ hover: {
           </div>
         ))}
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }
