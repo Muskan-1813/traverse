@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import MotionDiv from "@/utils/motionDivWrapper";
 export default function Devices({ animateActive }: { animateActive: boolean }) {
   return (
     <div className="relative w-full h-[220px] flex items-center justify-center lg:overflow-hidden  scale-[0.7] md:scale-[0.85] lg:scale-100">
       <div className="relative w-[320px] h-[160px] z-10 mb-20 ">
         <Image
-          src="/devices.png"
+          src="/devices.avif"
           alt="Devices"
           fill
           loading="lazy"
@@ -15,7 +15,7 @@ export default function Devices({ animateActive }: { animateActive: boolean }) {
         />
       </div>
 
-      <motion.div
+      <MotionDiv
         animate={
           animateActive
             ? {
@@ -38,14 +38,14 @@ export default function Devices({ animateActive }: { animateActive: boolean }) {
         className="absolute w-24 h-24 will-change-transform drop-shadow-[0_0_30px_rgba(124,255,0,0.6)] mb-20"
       >
         <Image
-          src="/shield.png"
+          src="/shield.avif"
           alt="Shield"
           fill
           loading="lazy"
           sizes="96px"
           className="object-contain"
         />
-      </motion.div>
+      </MotionDiv>
     </div>
   );
 }

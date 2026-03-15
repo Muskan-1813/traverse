@@ -50,6 +50,8 @@ export default function HeroSection() {
                 src="/earth.avif"
                 alt="Earth"
                 fill
+                loading="lazy"
+                fetchPriority="high"
                 className="spin-delayed relative z-10"
               />
             </div>
@@ -98,7 +100,7 @@ export default function HeroSection() {
               width={160}
               height={55}
               loading="lazy"
-              className="w-[140px] md:w-[120px] md:w-[120px] h-auto hover:scale-105 transition duration-300 cursor-pointer"
+              className="w-[140px] md:w-[120px] h-auto hover:scale-105 transition duration-300 cursor-pointer"
             />
             </a>
            
@@ -116,9 +118,11 @@ export default function HeroSection() {
               hidden md:block -z-10 opacity-50 lg:opacity-100"
       >
         <Image
-          src="/earth.png"
+          src="/earth.avif"
           alt="Earth"
           fill
+          loading="lazy"
+          fetchPriority="high"
           className="object-contain animate-spin-slow-reverse drop-shadow-[0_0_50px_rgba(34,197,94,0.9)]"
         />
       </div>

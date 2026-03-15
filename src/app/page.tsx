@@ -1,15 +1,40 @@
+"use client";
 import Image from "next/image";
-import HeroSection from "@/Components/Hero/HeroSection";
-
 import dynamic from "next/dynamic";
-import WorksWherever from "@/Components/Workwherever/WorksWherever";
+import LazyHydrate from "react-lazy-hydration";
+const WorksWherever = dynamic(
+  () => import("@/Components/Workwherever/WorksWherever"),
+  {
+    ssr: true,
+  },
+);
+const HeroSection = dynamic(() => import("@/Components/Hero/HeroSection"), {
+  loading: () => <div style={{ height: 500 }} />,
+  ssr: true,
+});
 
-const FeaturesSection = dynamic(() => import("@/Components/Feature/FeaturesSection"));
-const ServerCoverage = dynamic(() => import("@/Components/Servers/ServerCoverage"));
-const PricingSection = dynamic(() => import("@/Components/Pricecards/PricingSection"));
-const InstantConnectionSection = dynamic(() => import("@/Components/InstantConnection/InstantConnectionSection"));
+const FeaturesSection = dynamic(
+  () => import("@/Components/Feature/FeaturesSection"),
+);
+const ServerCoverage = dynamic(
+  () => import("@/Components/Servers/ServerCoverage"),
+  {
+    ssr: true,
+  },
+);
+const PricingSection = dynamic(
+  () => import("@/Components/Pricecards/PricingSection"),
+);
+const InstantConnectionSection = dynamic(
+  () => import("@/Components/InstantConnection/InstantConnectionSection"),
+  {
+    ssr: true,
+  },
+);
 const FAQSection = dynamic(() => import("@/Components/FAQs/FAQSection"));
-const CTASection = dynamic(() => import("@/Components/Footer/Footer"));
+const CTASection = dynamic(() => import("@/Components/Footer/Footer"), {
+  ssr: true,
+});
 
 export default function LandingPageContent() {
   return (
@@ -21,21 +46,24 @@ export default function LandingPageContent() {
           fill
           sizes="100vw"
           quality={80}
-          
           className="object-cover "
         />
-         <div className="absolute inset-0 bg-black/80"></div>
+        <div className="absolute inset-0 bg-black/80"></div>
       </div>
 
       <HeroSection />
-      <div className="lg:pt-[200px]" >
-        <FeaturesSection />
+      <div className="lg:pt-[200px]">
+        <LazyHydrate whenVisible>
+          <FeaturesSection />
+        </LazyHydrate>
       </div>
       <ServerCoverage />
+
       <PricingSection />
       <InstantConnectionSection />
-      <WorksWherever/>
+      <WorksWherever />
       <FAQSection />
+
       <CTASection />
     </div>
   );
