@@ -1,6 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
-
+import MotionDiv from "@/utils/motionDivWrapper";
 export default function Performance({ animateActive }: { animateActive: boolean }) {
   return (
     <div className="relative w-full h-full scale-[0.7] md:scale-[0.85] lg:scale-100 ">
@@ -11,7 +10,7 @@ export default function Performance({ animateActive }: { animateActive: boolean 
             key={i}
             className="relative h-[1px] w-full bg-gradient-to-r from-[#B6FF00]/10 via-[#B6FF00]/40 to-transparent"
           >
-            <motion.div
+            <MotionDiv
               /* - initial: positioned at -4px to be "half-hidden" on the left 
  - animate: travels to 140% to reach the planet even though the line is shorter
  */

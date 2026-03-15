@@ -1,4 +1,3 @@
-"use client";
 import Button from "@/Components/Button/Button";
 import Image from "next/image";
 
@@ -72,7 +71,7 @@ export default function ServerCoverage() {
       <div className="relative w-full h-[28vh] md:h-[60vh] lg:h-[90vh] bg-[#010101]">
         <div className="absolute -top-4 md:-top-10 lg:-top-[10px] left-0 w-full h-28 pointer-events-none bg-gradient-to-b  z-10" />
         <Image
-          src="/world-map-dots.png"
+          src="/world-map-dots.avif"
           alt="World Map"
           fill
           sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 70vw"

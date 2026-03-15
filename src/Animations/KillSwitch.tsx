@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-
+import MotionDiv from "@/utils/motionDivWrapper";
 interface KillSwitchProps {
   isMobile: boolean;
   animateActive: boolean;
@@ -12,7 +11,7 @@ export default function KillSwitch({ isMobile, animateActive }: KillSwitchProps)
     <div className="relative w-full h-40 mx-auto flex items-center justify-center md:scale-[0.85] lg:scale-100">
 
       {/* LEFT LINE */}
-<motion.div
+<MotionDiv
   initial={{ x: -3 }}
   animate={
     isMobile || animateActive
@@ -28,7 +27,7 @@ export default function KillSwitch({ isMobile, animateActive }: KillSwitchProps)
 />
 
 {/* RIGHT LINE */}
-<motion.div
+<MotionDiv
   initial={{ x: 3 }}
   animate={
     isMobile || animateActive
@@ -44,7 +43,7 @@ export default function KillSwitch({ isMobile, animateActive }: KillSwitchProps)
 />
 
       {/* SHIELD */}
-      <motion.div
+      <MotionDiv
         initial={{ opacity: 0, scale: 0.8 }}
         animate={
           isMobile || animateActive
@@ -78,7 +77,7 @@ export default function KillSwitch({ isMobile, animateActive }: KillSwitchProps)
           fill
           className="object-contain"
         />
-      </motion.div>
+      </MotionDiv>
     </div>
   );
 }
