@@ -91,7 +91,7 @@ bg-gradient-to-t from-transparent to-[#030A00]"
               <Image src="/logo.png" alt="Logo" width={25} height={50} />
               <span className="font-['Inter'] text-2xl">Traverse VPN</span>
             </div>
-            <p className="font-['DM_Sans'] lg:max-w-60 font-light text-white text-lg mb-6 leading-relaxed">
+            <p className="font-['DM_Sans'] lg:max-w-xs font-light text-white text-lg mb-6 leading-relaxed">
               Take control of your digital identity and enjoy the web the way it
               was meant to be.
             </p>
